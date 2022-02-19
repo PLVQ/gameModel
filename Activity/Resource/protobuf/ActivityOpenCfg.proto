@@ -1,0 +1,36 @@
+/**
+* @file:   ActivityOpenCfg.proto
+* @author: Jumbo 
+* @brief:  这个文件是通过工具自动生成的，建议不要手动修改
+*/
+
+syntax="proto3";
+
+package Resource;
+
+message ActivityOpenCfg{
+    /** 活动ID */
+    uint32 ActivityID = 1;
+    /** 活动名称 */
+    bytes ActivityName = 2;
+    /** 活动类型 */
+    uint32 AcitivityType = 3;
+    /** 开启类型 */
+    uint32 OpenType = 4;
+    /** 活动开启参数_1 */
+    repeated uint64 OpenParam = 5;
+    /** 开服时间限制 */
+    uint64 OpenServerTime = 6;
+    /** 开放等级 */
+    uint32 OpenLevel = 7;
+    /** 创角天数限制 */
+    uint32 CreateRoleDay = 8;
+    /** 排序id */
+    uint32 SortID = 9;
+    /** 延迟消失时间 */
+    uint64 DelayTime = 10;
+}
+
+message ActivityOpenCfg_ARRAY {
+    repeated ActivityOpenCfg items = 1;
+}

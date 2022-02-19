@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+message Player {
+    uint64 RoleNO = 1;
+    uint64 Uin = 2;
+    uint64 RoleID = 3;
+    int32 ChannelName = 4;
+    int32 RoleInit = 5;
+    string Name = 6;
+    uint32 Head = 7;
+    int32 Sex = 8;
+    int32 BodyType = 9;
+    uint32 Level = 10;
+    uint64 Exp = 11;
+    uint64 Diamond = 12;
+    uint64 Gold = 13;
+    uint64 FightVal = 14;
+    uint64 CreateTime = 15;
+    uint64 LastLoginTime = 16;
+    uint64 LastLogoutTime = 17;
+    uint64 LastSaveDBTime = 18;
+    uint64 TotalRMB = 19;
+}

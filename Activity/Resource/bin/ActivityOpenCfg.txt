@@ -1,0 +1,74 @@
+items {
+  ActivityID: 1
+  ActivityName: "/* \345\205\221\346\215\242\347\240\201 */"
+  AcitivityType: 1
+  OpenType: 1
+  OpenParam: 0
+  OpenLevel: 1
+  CreateRoleDay: 1
+  SortID: 5
+}
+items {
+  ActivityID: 3
+  ActivityName: "/* \347\255\276\345\210\260 */"
+  AcitivityType: 2
+  OpenType: 2
+  OpenParam: 0
+  OpenParam: 0
+  OpenLevel: 1
+  CreateRoleDay: 2
+  SortID: 3
+}
+items {
+  ActivityID: 5001
+  ActivityName: "/* \351\246\226\345\205\205 */"
+  AcitivityType: 3
+  OpenType: 3
+  OpenParam: 1565500000
+  OpenLevel: 1
+  CreateRoleDay: 3
+  SortID: 1
+}
+items {
+  ActivityID: 25001
+  ActivityName: "/*\347\273\255\345\205\205 */"
+  AcitivityType: 4
+  OpenType: 4
+  OpenParam: 0
+  OpenParam: 2400
+  OpenLevel: 1
+  CreateRoleDay: 4
+  SortID: 1
+}
+items {
+  ActivityID: 23001
+  ActivityName: "/* \347\233\256\346\240\207\347\244\274\345\214\205 */"
+  AcitivityType: 5
+  OpenType: 5
+  OpenParam: 12
+  OpenParam: 19
+  OpenLevel: 1
+  CreateRoleDay: 5
+  SortID: 1
+}
+items {
+  ActivityID: 33001
+  ActivityName: "/*\344\270\203\346\227\245\347\213\202\346\254\242 */"
+  AcitivityType: 6
+  OpenType: 6
+  OpenParam: 2
+  OpenLevel: 1
+  CreateRoleDay: 6
+  SortID: 1
+}
+items {
+  ActivityID: 49001
+  ActivityName: "/\344\273\231\347\225\214\345\272\206\345\205\270 */"
+  AcitivityType: 7
+  OpenType: 7
+  OpenParam: 0
+  OpenParam: 7
+  OpenLevel: 1
+  CreateRoleDay: 7
+  SortID: 1
+}

@@ -20,5 +20,6 @@ int main()
 	pPlayer->Init();
 	pPlayer->OnAfterLogin();
 	delete pPlayer;
+	SPDLOG_INFO("hello world");
     return 0;
 }

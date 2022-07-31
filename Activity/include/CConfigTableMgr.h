@@ -1,7 +1,7 @@
 #pragma once
 #include "CSingleton.h"
 #include "PublicHeader.h"
-#include "ResourceHeader.h"
+#include "resourceHeader.h"
 
 class CConfigTableMgr : public CSingleton<CConfigTableMgr>
 {
@@ -10,6 +10,6 @@ public:
     ~CConfigTableMgr();
     int Init();
 
-    const Resource::ActivityOpenCfg& GetActivityCfgByActivityID(uint32_t iActivityID);
+    const resource::ActivityOpenConfig& GetActivityCfgByActivityID(uint32_t iActivityID);
 private:
 };

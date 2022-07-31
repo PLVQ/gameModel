@@ -4,7 +4,9 @@
 #include <map>
 #include "CSingleton.h"
 #include "spdlog/spdlog.h"
+#include <google/protobuf/util/json_util.h>
 
+using google::protobuf::util::JsonStringToMessage;
 
 template <class T>
 class CConfigTable : public CSingleton<CConfigTable<T>>
@@ -24,19 +26,23 @@ private:
 template <class T>
 int CConfigTable<T>::LoadBin(std::string pFile)
 {
-	std::string fileName = m_filePath + "/Resource/bin/" + pFile;
+	std::string fileName = m_filePath + "/resource/bin/" + pFile;
 	std::ifstream in(fileName.c_str(), std::ios::binary);
 	if (!in.is_open())
 	{
 		SPDLOG_ERROR("read bin failed name:{}", fileName);
 		return -1;
 	}
-	if (!m_config->ParseFromIstream(&in))
+	std::stringstream fstr;
+	fstr << in.rdbuf() ;
+	if (JsonStringToMessage(fstr.str(), m_config).ok())
+	{
+		SPDLOG_ERROR("Init {} Succ!", fileName);
+	}
+	else
 	{
 		SPDLOG_ERROR("Init {} failed!", fileName);
-		return -1;
 	}
-	SPDLOG_ERROR("Init {} Succ!", fileName);
 	return 0;
 }
 

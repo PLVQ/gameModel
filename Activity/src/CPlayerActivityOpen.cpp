@@ -11,19 +11,19 @@ void CPlayerActivityOpen::OnInit()
 
 void CPlayerActivityOpen::OnAfterRoleLogin()
 {
-    NotifyActivityOpenCfg();
+    NotifyActivityOpenConfig();
 }
 
 void CPlayerActivityOpen::OnTick()
 {
     if (IsDirty())
     {
-        NotifyActivityOpenCfg();
+        NotifyActivityOpenConfig();
     }
 
     if (CTime::GetCurSec() > m_tLastTick + 3)
     {
-        NotifyActivityOpenCfg();
+        NotifyActivityOpenConfig();
         m_tLastTick = CTime::GetCurSec();
     }
 }
@@ -32,24 +32,24 @@ void CPlayerActivityOpen::OnZeroTime()
 {
 }
 
-void CPlayerActivityOpen::NotifyActivityOpenCfg()
+void CPlayerActivityOpen::NotifyActivityOpenConfig()
 {
-    auto pCfg = CConfigTable<Resource::ActivityOpenCfg_ARRAY>::Instance()->GetConfig();
+    auto pCfg = CConfigTable<resource::ActivityOpenConfigList>::Instance()->GetConfig();
 
-    for (auto iter : pCfg->items())
+    for (auto iter : pCfg->data())
     {
         if (IsActivityOpenOrDelay(iter))
         {
-			SPDLOG_INFO("Now Open ActivityID:{}", iter.activityid());
+			SPDLOG_INFO("Now Open ActivityID:{} {}", iter.activityid(), iter.activityname());
         }
     }
 }
 
-bool CPlayerActivityOpen::IsActivityOpenOrDelay(const Resource::ActivityOpenCfg &ActivityConfig)
+bool CPlayerActivityOpen::IsActivityOpenOrDelay(const resource::ActivityOpenConfig &ActivityConfig)
 {
-    if (ActivityConfig.openservertime() > 0)
+    if (ActivityConfig.opensvrtimelimit() > 0)
     {
-        if (CTime::GetCurSec() < ActivityConfig.openservertime())
+        if (CTime::GetCurSec() < ActivityConfig.opensvrtimelimit())
         {
             return false;
         }
@@ -57,7 +57,7 @@ bool CPlayerActivityOpen::IsActivityOpenOrDelay(const Resource::ActivityOpenCfg 
 
     uint64_t tRoleCreateTime = m_pPlayer->GetRoleData()->createtime();
     int iCreateRoleDays = CTime::GetDiffDay(CTime::GetCurSec(), tRoleCreateTime);
-    if (ActivityConfig.createroleday() > 0 && iCreateRoleDays <= ActivityConfig.createroleday())
+    if (ActivityConfig.createroledays() > 0 && iCreateRoleDays <= ActivityConfig.createroledays())
     {
         return false;
     }

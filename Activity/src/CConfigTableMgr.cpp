@@ -6,34 +6,18 @@ CConfigTableMgr::~CConfigTableMgr() {}
 
 int CConfigTableMgr::Init()
 {
-    int iRet = CConfigTable<Resource::AccountInfo_ARRAY>::Instance()->LoadBin(
-        "AccountInfo.bin");
+    int iRet = CConfigTable<resource::ActivityOpenConfigList>::Instance()->LoadBin("ActivityOpenConfig.bin");
     if (iRet != 0)
     {
-        SPDLOG_ERROR("LoadBin Failed BinName:{}", "AccountInfo");
-        return -1;
-    }
-
-    iRet = CConfigTable<Resource::GoodsInfo_ARRAY>::Instance()->LoadBin(
-        "GoodsInfo.bin");
-    if (iRet != 0)
-    {
-        SPDLOG_ERROR("LoadBin Failed BinName:{}", "GoodsInfo");
-        return -1;
-    }
-
-    iRet = CConfigTable<Resource::ActivityOpenCfg_ARRAY>::Instance()->LoadBin("ActivityOpenCfg.bin");
-    if (iRet != 0)
-    {
-        SPDLOG_ERROR("LoadBin Failed BinName:{}", "ActivityOpenCfg");
+        SPDLOG_ERROR("LoadBin Failed BinName:{}", "ActivityOpenConfig");
         return -1;
     }
     return 0;
 }
 
-const Resource::ActivityOpenCfg& CConfigTableMgr::GetActivityCfgByActivityID(uint32_t iActivityID)
+const resource::ActivityOpenConfig& CConfigTableMgr::GetActivityCfgByActivityID(uint32_t iActivityID)
 {
-    for (auto iter : CConfigTable<Resource::ActivityOpenCfg_ARRAY>::Instance()->GetConfig()->items())
+    for (auto iter : CConfigTable<resource::ActivityOpenConfigList>::Instance()->GetConfig()->data())
     {
         if (iter.activityid() == iActivityID)
         {

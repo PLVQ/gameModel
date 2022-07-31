@@ -1,9 +1,7 @@
 #include "PublicHeader.h"
 #include "CConfigTableMgr.h"
 #include "CConfigTable.h"
-#include "AccountInfo.pb.h"
-#include "GoodsInfo.pb.h"
-#include "ActivityOpenCfg.pb.h"
+#include "ActivityOpenConfig.pb.h"
 #include "CPlayer.h"
 #include "CTime.h"
 #include <chrono>

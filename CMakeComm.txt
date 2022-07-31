@@ -31,7 +31,6 @@ link_directories(${COMM_LIB_PATH})
 
 set(COMM_LIB_NAME
         "${LIB_PREFIX}protobuf"
-        "${LIB_PREFIX}protoc"
         "jsoncpp"
 
 )

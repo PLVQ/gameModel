@@ -14,17 +14,17 @@ class CTime : public CSingleton<CTime>
 public:
 	CTime();
 	~CTime();
-	// »ñÈ¡µ±Ç°Ê±ÇøÓë±ê×¼Ê±ÇøµÄ±ãÒËÊ±¼ä´Á
+	// ï¿½ï¿½È¡ï¿½ï¿½Ç°Ê±ï¿½ï¿½ï¿½ï¿½ï¿½×¼Ê±ï¿½ï¿½ï¿½Ä±ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½
 	static time_t GetUTCAndLocalDiffSec();
-	// »ñÈ¡µ±Ç°Ê±¼ä(Î¢Ãë)
+	// ï¿½ï¿½È¡ï¿½ï¿½Ç°Ê±ï¿½ï¿½(Î¢ï¿½ï¿½)
 	static time_t GetCurMicrSec();
-	// »ñÈ¡µ±Ç°Ê±¼ä(ºÁÃë)
+	// ï¿½ï¿½È¡ï¿½ï¿½Ç°Ê±ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½)
 	static time_t GetCurMillSec();
-	// »ñÈ¡µ±Ç°Ê±¼ä(Ãë)
+	// ï¿½ï¿½È¡ï¿½ï¿½Ç°Ê±ï¿½ï¿½(ï¿½ï¿½)
 	static time_t GetCurSec();
 	/*
-		brief:»ñÈ¡ÌØ¶¨Ê±¼ä
-		param tTime Ê±¼ä´Á(Ãë)
+		brief:ï¿½ï¿½È¡ï¿½Ø¶ï¿½Ê±ï¿½ï¿½
+		param tTime Ê±ï¿½ï¿½ï¿½(ï¿½ï¿½)
 	*/
 	static int GetMin(time_t tTime);
 	static int GetHour(time_t tTime);
@@ -34,7 +34,7 @@ public:
 	static int GetMonth(time_t tTime);
 	static int GetYear(time_t tTime);
 	/*
-		brief:±È½ÏÊ±¼ä
+		brief:ï¿½È½ï¿½Ê±ï¿½ï¿½
 	*/
 	static int GetDiffHour(time_t tTime1, time_t tTime2);
 	static int GetDiffDay(time_t tTime1, time_t tTime2, int tSecOffset = 0);

@@ -4,6 +4,7 @@
 #include <map>
 #include "CSingleton.h"
 #include "spdlog/spdlog.h"
+#include "PublicHeader.h"
 #include <google/protobuf/util/json_util.h>
 
 using google::protobuf::util::JsonStringToMessage;
@@ -35,6 +36,11 @@ int CConfigTable<T>::LoadBin(std::string pFile)
 	}
 	std::stringstream fstr;
 	fstr << in.rdbuf() ;
+
+	std::string str = UTF8ToANSI(fstr.str().c_str());
+	SPDLOG_ERROR("Init {} Succ!", str);
+	SPDLOG_ERROR("Init {} Succ!", fstr.str());
+	
 	if (JsonStringToMessage(fstr.str(), m_config).ok())
 	{
 		SPDLOG_ERROR("Init {} Succ!", fileName);
@@ -51,3 +57,4 @@ T* CConfigTable<T>::GetConfig()
 {
 	return m_config;
 }
+

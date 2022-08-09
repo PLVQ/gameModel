@@ -27,7 +27,8 @@ private:
 template <class T>
 int CConfigTable<T>::LoadBin(std::string pFile)
 {
-	std::string fileName = m_filePath + "/resource/bin/" + pFile;
+	std::string fileName = m_filePath + "/Resource/bin/" + pFile;
+	SPDLOG_ERROR("file {}", fileName);
 	std::ifstream in(fileName.c_str(), std::ios::binary);
 	if (!in.is_open())
 	{
@@ -37,8 +38,6 @@ int CConfigTable<T>::LoadBin(std::string pFile)
 	std::stringstream fstr;
 	fstr << in.rdbuf() ;
 
-	std::string str = UTF8ToANSI(fstr.str().c_str());
-	SPDLOG_ERROR("Init {} Succ!", str);
 	SPDLOG_ERROR("Init {} Succ!", fstr.str());
 	
 	if (JsonStringToMessage(fstr.str(), m_config).ok())

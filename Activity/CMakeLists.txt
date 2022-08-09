@@ -8,7 +8,7 @@ include(../CMakeComm.txt)
 include_directories(
         ${PROJECT_SOURCE_DIR}/include
         ${PROJECT_SOURCE_DIR}/Data/protobuf
-        ${PROJECT_SOURCE_DIR}/resource/protobuf
+	${PROJECT_SOURCE_DIR}/Resource/protobuf
 )
 
 # 数据结构文件
@@ -25,7 +25,7 @@ aux_source_directory(${PROJECT_SOURCE_DIR}/src SOURCE_DIR)
 # 数据定义
 aux_source_directory(${PROJECT_SOURCE_DIR}/Data/protobuf SOURCE_DIR)
 # 配置定义
-aux_source_directory(${PROJECT_SOURCE_DIR}/resource/protobuf SOURCE_DIR)
+aux_source_directory(${PROJECT_SOURCE_DIR}/Resource/protobuf SOURCE_DIR)
 
 add_definitions( -DPROJECT_SOURCE_DIR=\"${PROJECT_SOURCE_DIR}\")
 

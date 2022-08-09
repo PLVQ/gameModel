@@ -1,7 +1,7 @@
 #pragma once
 #include "CSingleton.h"
 #include "PublicHeader.h"
-#include "resourceHeader.h"
+#include "ResourceHeader.h"
 
 class CConfigTableMgr : public CSingleton<CConfigTableMgr>
 {

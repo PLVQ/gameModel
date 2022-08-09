@@ -4,7 +4,7 @@ if (WIN32)
         set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} /MTd")
 elseif (UNIX)
         set(LIB_PREFIX "")
-        SET(CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS} "-std=c++11 -pthread")
+        SET(CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS} "-std=c++11 -pthread -lprotobuf")
  endif()
 
 #设定所有源码列表 ：aux_source_directory(<dir> <variable>)
